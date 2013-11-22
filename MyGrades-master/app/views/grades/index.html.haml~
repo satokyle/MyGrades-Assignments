@@ -1,0 +1,20 @@
+-# This file is app/view/movies/index.html.haml
+
+%h1  MyGrades
+
+%table#grades
+  %thead
+    %tr
+      %th Assignment Name
+      %th <img alt="Line" src="/assets/VerticalLine.jpg" />
+      %th Points	
+      %th Due Date	
+  %body
+    - @grades.each do |grade|
+      %tr
+        %td= grade.assign_name
+        %td
+        %td= grade.points
+        %td= grade.due_date.strftime("%m/%d/%y")
+        %td= link_to "More about #{grade.assign_name}", grade_path(grade)
+

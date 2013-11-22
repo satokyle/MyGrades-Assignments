@@ -1,0 +1,15 @@
+class CreateAssignment < ActiveRecord::Migration
+  def up
+     create_table 'grades' do |t|
+	t.string 'assign_name'
+	t.string 'points'
+	t.text	 'description'
+        t.datetime 'due_date'
+        t.timestamps
+    end
+  end
+
+  def down
+	drop_tables 'assignments'
+  end
+end
